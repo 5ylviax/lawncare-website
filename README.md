@@ -1,9 +1,10 @@
-# lawncare-website
-A full stack web application for a lawn care business.
+## About
+A full stack web application for Santiago Lawn Care LLC, allowing customers to 
+request quotes, view services, and contact the business. 
 
 ## Tech Stack
 
-| Layer | Technology |
+| Layer | Technology|
 |---|---|
 | **Backend** | Go |
 | **Frontend** | HTML, CSS, JavaScript |
@@ -11,6 +12,10 @@ A full stack web application for a lawn care business.
 | **Hosting** | Render / Azure App Service |
 | **Task Runner** | Makefile|
 
+## Run 
+```go
+go run ./cmd
+```
 
 ## Built By
 Built and maintained by Silvia Saavedra
