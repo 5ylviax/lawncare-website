@@ -2,9 +2,10 @@ package main
 
 import "net/http"
 
-func (app *application) routes() *http.ServeMux {
+func (app *App) routes() *http.ServeMux {
 	mux := http.NewServeMux()
 
-	mux.HandleFunc("/", app.home)
+	mux.Handle("/static/", http.StripPrefix("/static", http.FileServer(http.Dir("static"))))
+	mux.HandleFunc("/", app.handleIndex)
 	return mux
 }

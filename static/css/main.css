@@ -1,0 +1,27 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+    list-style-type: none;  /* Removes the bullet points from list */
+    margin: 0;              /*  property creates extra space outside of an element's defined border*/
+    padding: 0;  /*padding properties are used to generate space around an element's content, inside of any defined borders.*/
+    overflow: hidden; /*property controls what happens to content that is too big to fit into an area.*/
+    background-color: #333333;
+}
+li {
+  float: left; /*property can have one of the following values: The element floats to the left of its container*/
+}
+ul li a {
+  display: block; /*isplays an element as a block element (like <p>). It starts on a new line, and takes up the whole width*/
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #111111;
+}

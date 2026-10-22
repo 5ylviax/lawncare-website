@@ -9,7 +9,7 @@ request quotes, view services, and contact the business.
 | **Backend** | Go |
 | **Frontend** | HTML, CSS, JavaScript |
 | **Database** | SQLite |
-| **Hosting** | Render / Azure App Service |
+| **Hosting** | Unkownn
 | **Task Runner** | Makefile|
 
 ## Run 

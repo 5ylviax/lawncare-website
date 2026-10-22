@@ -5,7 +5,9 @@ import (
 	"net/http"
 )
 
-func (app *application) home(w http.ResponseWriter, r *http.Request) {
+// tmpl, err := template.New("test")
+
+func (app *App) handleIndex(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path != "/" {
 		http.NotFound(w, r)
 		return
