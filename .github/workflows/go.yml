@@ -5,24 +5,37 @@ name: Go
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v7
+      - uses: actions/checkout@v7
 
-    - name: Set up Go
-      uses: actions/setup-go@v7
-      with:
-        go-version-file: go.mod
+      - name: Set up Go
+        uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
 
-    - name: Build
-      run: go build -v -o bin/ ./...
+      - name: Build
+        run: go build -v -o bin/ ./...
 
-    - name: Test
-      run: go test -v ./...
+      - name: Test
+        run: go test -v ./...
+
+      - name: Package website
+        if: github.event_name == 'push'
+        run: |
+          go build -o lawncare-server ./cmd
+          tar -czf lawncare.tar.gz lawncare-server static templates
+
+      - name: Upload deployment package
+        if: github.event_name == 'push'
+        uses: actions/upload-artifact@v4
+        with:
+          name: lawncare
+          path: lawncare.tar.gz
+          if-no-files-found: error
